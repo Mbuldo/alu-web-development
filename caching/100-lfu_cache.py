@@ -29,7 +29,7 @@ class LFUCache(BaseCaching):
                    key not in self.cache_data):
                min_freq = min(self.usage_count.values())
                lfu_keys = [k for k, v in self.usage_count.items()
-                         if v == min_freq]
+                          if v == min_freq]
                
                if len(lfu_keys) > 1:
                    for lru_key in self.lru_order:
@@ -38,7 +38,7 @@ class LFUCache(BaseCaching):
                            break
                else:
                    discard_key = lfu_keys[0]
-               
+
                del self.cache_data[discard_key]
                del self.usage_count[discard_key]
                self.lru_order.remove(discard_key)
