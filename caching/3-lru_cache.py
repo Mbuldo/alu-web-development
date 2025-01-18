@@ -5,20 +5,20 @@ from base_caching import BaseCaching
 
 
 class LRUCache(BaseCaching):
-   """ LRUCache defines:
-       - caching system with LRU algorithm
-       - max number of items from parent BaseCaching
+   """LRUCache defines:
+   - caching system with LRU algorithm
+   - max number of items from parent BaseCaching
    """
 
    def __init__(self):
-       """ Initialize cache
-           Call parent class constructor
+       """Initialize cache
+       Call parent class constructor
        """
        super().__init__()
        self.lru_order = []
 
    def put(self, key, item):
-       """ Add an item in the cache using LRU algorithm
+       """Add an item in the cache using LRU algorithm
        Args:
            key: key to add to cache
            item: value to associate with key
@@ -36,7 +36,7 @@ class LRUCache(BaseCaching):
            self.lru_order.append(key)
 
    def get(self, key):
-       """ Get an item by key
+       """Get an item by key
        Args:
            key: key to look for in cache
        Returns:
