@@ -29,7 +29,7 @@ class FIFOCache(BaseCaching):
                 first_key = self.queue.pop(0)
                 del self.cache_data[first_key]
                 print(f"DISCARD: {first_key}")
-            
+
             self.cache_data[key] = item
             if key not in self.queue:
                 self.queue.append(key)
